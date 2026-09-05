@@ -1,0 +1,26 @@
+---
+title: "Automating Core Banking Releases Without Breaking Production"
+date: "2026-08-15"
+excerpt: "Notes on moving a bank's release process from manual, high-risk deployments to a governed CI/CD pipeline — without sacrificing the safety checks a regulated environment needs."
+tags: ["CI/CD", "DevOps", "Banking", "Terraform"]
+---
+
+Core banking systems are unforgiving. A bad deploy doesn't just break a feature — it can interrupt transactions for real customers moving real money. So when the goal is "automate the release process," the real goal underneath it is "automate the release process without removing any of the safety checks that make production changes survivable."
+
+## Start with the manual process, not the tooling
+
+Before writing a single pipeline, it's worth mapping the existing manual process exactly as it happens — every handoff between developers, QA, and infrastructure, every health check someone runs by hand, every "are we sure?" conversation before a release window. Skipping this step and jumping straight to a CI/CD tool tends to automate the wrong things.
+
+## Keep the gates, remove the toil
+
+The pipeline that came out of this process didn't remove approval gates or production-readiness checks — it made them consistent and enforced them automatically:
+
+- Build and validate in a standardized environment every time, not "however the last engineer set up their machine."
+- Run deployment validation and health checks as pipeline stages, not as a mental checklist.
+- Treat observability as part of the release, not an afterthought — if a rollout starts degrading a metric, that should surface immediately.
+
+## The payoff
+
+None of this makes releases *fast* for its own sake. It makes them **repeatable**, which is what actually reduces operational risk in a regulated environment. Faster releases were a side effect of removing manual variance — not the primary goal.
+
+If you're doing this in your own environment, start by writing down the manual process before you touch a YAML file. It's the least exciting step and the one most worth doing properly.
