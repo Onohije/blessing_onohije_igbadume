@@ -43,7 +43,7 @@ export default function PrivacyPage() {
           </p>
           <h2>Cookies</h2>
           <p>This site does not set tracking or advertising cookies.</p>
-          <p className="text-sm text-slate-500 dark:text-slate-400">Last updated: September 2026.</p>
+          <p className="text-sm text-slate-500">Last updated: September 2026.</p>
         </div>
       </div>
     </Section>

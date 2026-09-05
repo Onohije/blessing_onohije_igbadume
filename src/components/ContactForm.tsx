@@ -38,7 +38,7 @@ export function ContactForm() {
 
   if (status === "success") {
     return (
-      <div role="status" className="rounded-xl border border-teal-200 bg-teal-50 p-6 text-teal-800 dark:border-teal-900 dark:bg-teal-950 dark:text-teal-200">
+      <div role="status" className="rounded-xl border border-accent-200 bg-accent-50 p-6 text-accent-800">
         <p className="font-semibold">Thank you — your message has been sent.</p>
         <p className="mt-1 text-sm">I&apos;ll get back to you as soon as I can.</p>
       </div>
@@ -54,7 +54,7 @@ export function ContactForm() {
       </div>
 
       <div>
-        <label htmlFor="name" className="block text-sm font-medium text-slate-700 dark:text-slate-200">
+        <label htmlFor="name" className="block text-sm font-medium text-slate-700">
           Name
         </label>
         <input
@@ -64,13 +64,13 @@ export function ContactForm() {
           required
           minLength={2}
           autoComplete="name"
-          className="mt-1.5 block w-full rounded-lg border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-900 shadow-sm placeholder:text-slate-400 dark:border-slate-700 dark:bg-slate-900 dark:text-white"
+          className="mt-1.5 block w-full rounded-lg border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-ink-900 shadow-sm placeholder:text-slate-400"
           placeholder="Your name"
         />
       </div>
 
       <div>
-        <label htmlFor="email" className="block text-sm font-medium text-slate-700 dark:text-slate-200">
+        <label htmlFor="email" className="block text-sm font-medium text-slate-700">
           Email
         </label>
         <input
@@ -79,13 +79,13 @@ export function ContactForm() {
           type="email"
           required
           autoComplete="email"
-          className="mt-1.5 block w-full rounded-lg border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-900 shadow-sm placeholder:text-slate-400 dark:border-slate-700 dark:bg-slate-900 dark:text-white"
+          className="mt-1.5 block w-full rounded-lg border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-ink-900 shadow-sm placeholder:text-slate-400"
           placeholder="you@example.com"
         />
       </div>
 
       <div>
-        <label htmlFor="message" className="block text-sm font-medium text-slate-700 dark:text-slate-200">
+        <label htmlFor="message" className="block text-sm font-medium text-slate-700">
           Message
         </label>
         <textarea
@@ -94,13 +94,13 @@ export function ContactForm() {
           required
           minLength={10}
           rows={5}
-          className="mt-1.5 block w-full rounded-lg border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-900 shadow-sm placeholder:text-slate-400 dark:border-slate-700 dark:bg-slate-900 dark:text-white"
+          className="mt-1.5 block w-full rounded-lg border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-ink-900 shadow-sm placeholder:text-slate-400"
           placeholder="How can I help?"
         />
       </div>
 
       {status === "error" && (
-        <p role="alert" className="text-sm font-medium text-red-600 dark:text-red-400">
+        <p role="alert" className="text-sm font-medium text-red-600">
           {errorMessage}
         </p>
       )}
@@ -108,7 +108,7 @@ export function ContactForm() {
       <button
         type="submit"
         disabled={status === "submitting"}
-        className="inline-flex items-center justify-center rounded-lg bg-teal-700 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-teal-800 disabled:cursor-not-allowed disabled:opacity-60"
+        className="inline-flex items-center justify-center rounded-lg bg-accent-700 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-accent-800 disabled:cursor-not-allowed disabled:opacity-60"
       >
         {status === "submitting" ? "Sending…" : "Send message"}
       </button>

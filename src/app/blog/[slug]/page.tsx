@@ -43,10 +43,10 @@ export default async function BlogPostPage({
         <CTALink href="/blog" variant="secondary">
           ← All posts
         </CTALink>
-        <h1 className="mt-6 text-3xl font-bold tracking-tight text-slate-900 dark:text-white">
+        <h1 className="mt-6 text-3xl font-bold tracking-tight text-ink-900">
           {post.title}
         </h1>
-        <p className="mt-2 text-xs text-slate-500 dark:text-slate-400">
+        <p className="mt-2 text-xs text-slate-500">
           <time dateTime={post.date}>
             {new Date(post.date).toLocaleDateString("en-GB", {
               year: "numeric",

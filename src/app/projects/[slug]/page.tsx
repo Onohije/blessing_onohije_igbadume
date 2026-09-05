@@ -40,7 +40,7 @@ export default async function CaseStudyPage({
         <CTALink href="/projects" variant="secondary">
           ← All case studies
         </CTALink>
-        <h1 className="mt-6 text-3xl font-bold tracking-tight text-slate-900 dark:text-white">
+        <h1 className="mt-6 text-3xl font-bold tracking-tight text-ink-900">
           {cs.title}
         </h1>
         <div className="mt-4 flex flex-wrap gap-2">

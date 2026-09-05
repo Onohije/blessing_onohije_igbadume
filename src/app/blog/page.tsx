@@ -20,11 +20,11 @@ export default function BlogIndexPage() {
         {posts.map((post) => (
           <Card key={post.slug}>
             <Link href={`/blog/${post.slug}`} className="group">
-              <h2 className="text-lg font-semibold text-slate-900 group-hover:text-teal-700 dark:text-white dark:group-hover:text-teal-400">
+              <h2 className="text-lg font-semibold text-ink-900 group-hover:text-accent-700">
                 {post.title}
               </h2>
             </Link>
-            <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
+            <p className="mt-1 text-xs text-slate-500">
               <time dateTime={post.date}>
                 {new Date(post.date).toLocaleDateString("en-GB", {
                   year: "numeric",
@@ -33,7 +33,7 @@ export default function BlogIndexPage() {
                 })}
               </time>
             </p>
-            <p className="mt-3 text-sm text-slate-600 dark:text-slate-300">{post.excerpt}</p>
+            <p className="mt-3 text-sm text-slate-600">{post.excerpt}</p>
             <div className="mt-4 flex flex-wrap gap-2">
               {post.tags.map((t) => (
                 <Badge key={t}>{t}</Badge>
@@ -42,7 +42,7 @@ export default function BlogIndexPage() {
           </Card>
         ))}
         {posts.length === 0 && (
-          <p className="text-sm text-slate-500 dark:text-slate-400">
+          <p className="text-sm text-slate-500">
             No posts yet — check back soon.
           </p>
         )}

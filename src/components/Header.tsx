@@ -12,35 +12,47 @@ const NAV = [
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-40 border-b border-slate-200/80 bg-white/85 backdrop-blur dark:border-slate-800/80 dark:bg-slate-950/85">
+    <header className="sticky top-0 z-40 border-b border-slate-200/70 bg-white/80 backdrop-blur-md">
       {/* Skip link for keyboard/screen-reader users, visible on focus */}
       <a
         href="#main-content"
-        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-teal-700 focus:px-4 focus:py-2 focus:text-white"
+        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-accent-800 focus:px-4 focus:py-2 focus:text-white"
       >
         Skip to main content
       </a>
-      <Container className="flex h-16 items-center justify-between">
-        <Link
-          href="/"
-          className="text-sm font-semibold tracking-tight text-slate-900 dark:text-white"
-        >
-          {site.name}
+      <Container className="flex h-18 items-center justify-between py-3">
+        <Link href="/" className="group flex items-center gap-2.5">
+          <span
+            aria-hidden="true"
+            className="flex h-9 w-9 items-center justify-center rounded-lg border border-accent-600/30 bg-ink-900 font-display text-sm font-bold text-accent-400 transition-colors group-hover:border-accent-500/60"
+          >
+            B
+          </span>
+          {/* Full name where there's room; shortened on narrow phones so the
+              menu button never gets crowded. */}
+          <span className="hidden font-display text-sm font-semibold tracking-tight text-ink-900 min-[400px]:inline">
+            {site.name}
+          </span>
+          <span className="font-display text-sm font-semibold tracking-tight text-ink-900 min-[400px]:hidden">
+            Blessing Igbadume
+          </span>
         </Link>
-        <nav aria-label="Primary" className="hidden gap-6 sm:flex">
+
+        <nav aria-label="Primary" className="hidden items-center gap-8 sm:flex">
           {NAV.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="text-sm font-medium text-slate-600 transition-colors hover:text-teal-600 dark:text-slate-300 dark:hover:text-teal-400"
+              className="relative py-1 text-sm font-medium text-slate-600 transition-colors hover:text-ink-900 after:absolute after:-bottom-0.5 after:left-0 after:h-px after:w-0 after:bg-accent-600 after:transition-all after:duration-200 hover:after:w-full"
             >
               {item.label}
             </Link>
           ))}
         </nav>
+
         <details className="relative sm:hidden">
           <summary
-            className="cursor-pointer list-none rounded-md p-2 text-slate-700 dark:text-slate-200"
+            className="cursor-pointer list-none rounded-md p-2 text-ink-800"
             aria-label="Open menu"
           >
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -54,13 +66,13 @@ export function Header() {
           </summary>
           <nav
             aria-label="Primary"
-            className="absolute right-0 mt-2 w-44 rounded-lg border border-slate-200 bg-white p-2 shadow-lg dark:border-slate-800 dark:bg-slate-900"
+            className="absolute right-0 mt-3 w-48 rounded-xl border border-slate-200 bg-white p-2 shadow-xl"
           >
             {NAV.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="block rounded-md px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 dark:text-slate-200 dark:hover:bg-slate-800"
+                className="block rounded-lg px-3 py-2.5 text-sm font-medium text-slate-700 transition-colors hover:bg-accent-700/8 hover:text-accent-800"
               >
                 {item.label}
               </Link>

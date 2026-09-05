@@ -21,36 +21,36 @@ export default function ContactPage() {
       />
       <div className="grid gap-8 sm:grid-cols-[1fr_1.2fr]">
         <Card>
-          <h2 className="font-semibold text-slate-900 dark:text-white">Direct contact</h2>
+          <h2 className="font-semibold text-ink-900">Direct contact</h2>
           <dl className="mt-4 space-y-3 text-sm">
             <div>
-              <dt className="text-slate-500 dark:text-slate-400">Email</dt>
+              <dt className="text-slate-500">Email</dt>
               <dd>
-                <a href={`mailto:${site.email}`} className="font-medium text-teal-700 dark:text-teal-400">
+                <a href={`mailto:${site.email}`} className="font-medium text-accent-700">
                   {site.email}
                 </a>
               </dd>
             </div>
             <div>
-              <dt className="text-slate-500 dark:text-slate-400">Phone</dt>
-              <dd className="font-medium text-slate-800 dark:text-slate-100">{site.phone}</dd>
+              <dt className="text-slate-500">Phone</dt>
+              <dd className="font-medium text-slate-800">{site.phone}</dd>
             </div>
             <div>
-              <dt className="text-slate-500 dark:text-slate-400">LinkedIn</dt>
+              <dt className="text-slate-500">LinkedIn</dt>
               <dd>
                 <a
                   href={site.linkedin}
                   target="_blank"
                   rel="noreferrer noopener"
-                  className="font-medium text-teal-700 dark:text-teal-400"
+                  className="font-medium text-accent-700"
                 >
                   linkedin.com/in/onohijeigbadume
                 </a>
               </dd>
             </div>
             <div>
-              <dt className="text-slate-500 dark:text-slate-400">Location</dt>
-              <dd className="font-medium text-slate-800 dark:text-slate-100">{site.location}</dd>
+              <dt className="text-slate-500">Location</dt>
+              <dd className="font-medium text-slate-800">{site.location}</dd>
             </div>
           </dl>
         </Card>

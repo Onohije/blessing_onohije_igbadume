@@ -40,10 +40,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport = {
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
-    { media: "(prefers-color-scheme: dark)", color: "#020617" },
-  ],
+  themeColor: "#0b1220",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -66,13 +63,25 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className="h-full" suppressHydrationWarning>
       <head>
+        {/* Webfonts are loaded at runtime (not build time) so the build stays
+            network-independent. display=swap keeps text visible while loading. */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        {/* The no-page-custom-font rule targets the Pages Router's per-page
+            _document risk. This is the App Router root layout, so this link is
+            applied to every page exactly once — the rule doesn't apply. */}
+        {/* eslint-disable-next-line @next/next/no-page-custom-font */}
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+        />
         {/* Structured data for search engines (schema.org Person) */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
         />
       </head>
-      <body className="flex min-h-full flex-col bg-white font-sans text-slate-900 antialiased dark:bg-slate-950 dark:text-slate-100">
+      <body className="flex min-h-full flex-col bg-white font-sans text-ink-900 antialiased">
         <Header />
         <main id="main-content" className="flex-1">
           {children}

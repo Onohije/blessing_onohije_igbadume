@@ -21,8 +21,8 @@ export default function ProjectsPage() {
       <div className="grid gap-6 sm:grid-cols-2">
         {caseStudies.map((cs) => (
           <Card key={cs.slug}>
-            <h3 className="text-lg font-semibold text-slate-900 dark:text-white">{cs.title}</h3>
-            <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">{cs.summary}</p>
+            <h3 className="text-lg font-semibold text-ink-900">{cs.title}</h3>
+            <p className="mt-2 text-sm text-slate-600">{cs.summary}</p>
             <div className="mt-4 flex flex-wrap gap-2">
               {cs.tags.map((t) => (
                 <Badge key={t}>{t}</Badge>
